@@ -8,13 +8,23 @@
 #import "KHFlatButton.h"
 #import <QuartzCore/QuartzCore.h>
 
-const float kDefaultRadius = 2.0;
+static CGFloat const kDefaultCornerRadius = 3.0;
+static CGFloat const kMinimumFontSize = 14.0;
+static CGFloat const kHighlightDelta = 0.2;
 
 @interface KHFlatButton()
 @property (strong, nonatomic) UIColor *buttonColor;
 @end
 
 @implementation KHFlatButton
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    [self makeFlat:self withBackgroundColor:self.backgroundColor];
+    self.layer.cornerRadius = kDefaultCornerRadius;
+}
 
 - (id)initWithFrame:(CGRect)frame withBackgroundColor:(UIColor*)backgroundColor
 {
@@ -30,9 +40,9 @@ const float kDefaultRadius = 2.0;
     self = [super initWithFrame:frame];
     if (self) {
         [self makeFlat:self withBackgroundColor:backgroundColor];
-        // If no radius is provided use default of 2.0
-        radius = (radius) ? radius : kDefaultRadius;
-        [self.layer setCornerRadius:radius];
+        if (radius) {
+            self.layer.cornerRadius = radius;
+        }
         [self setTitle:title forState:UIControlStateNormal];
     }
     return self;
@@ -40,19 +50,29 @@ const float kDefaultRadius = 2.0;
 
 + (KHFlatButton *)buttonWithFrame:(CGRect)frame withTitle:(NSString *)title backgroundColor:(UIColor *)backgroundColor cornerRadius:(CGFloat)radius
 {
-    KHFlatButton *btn = [[KHFlatButton alloc]initWithFrame:frame withTitle:title backgroundColor:backgroundColor cornerRadius:radius];
+    KHFlatButton *btn = [[KHFlatButton alloc] initWithFrame:frame
+                                                  withTitle:title
+                                            backgroundColor:backgroundColor
+                                               cornerRadius:radius];
     return btn;    
 }
 
 + (KHFlatButton *)buttonWithFrame:(CGRect)frame withTitle:(NSString *)title backgroundColor:(UIColor *)backgroundColor
 {
-    KHFlatButton *btn = [[KHFlatButton alloc]initWithFrame:frame withTitle:title backgroundColor:backgroundColor cornerRadius:kDefaultRadius];
+    KHFlatButton *btn = [[KHFlatButton alloc] initWithFrame:frame
+                                                  withTitle:title
+                                            backgroundColor:backgroundColor
+                                               cornerRadius:kDefaultCornerRadius];
     return btn;
 }
 
 - (void)makeFlat:(KHFlatButton *)button withBackgroundColor:(UIColor*)backgroundColor
 {
     self.buttonColor = backgroundColor;
+    
+    CGFloat fontSize = floorf(CGRectGetHeight(self.bounds) / 2.5);
+    self.titleLabel.font = [UIFont boldSystemFontOfSize:MAX(kMinimumFontSize, fontSize)];
+    
     [self setBackgroundColor:backgroundColor];
     [self addTarget:self action:@selector(wasPressed) forControlEvents:UIControlEventTouchDown];
     [self addTarget:self action:@selector(endedPress) forControlEvents:UIControlEventTouchDragExit];
@@ -61,31 +81,13 @@ const float kDefaultRadius = 2.0;
 
 - (void)wasPressed
 {
-    UIColor *newColor;
-    CGFloat red = 0.0, green = 0.0, blue = 0.0, alpha = 0.0, white = 0.0;
-    
-    if([self.buttonColor respondsToSelector:@selector(getRed:green:blue:alpha:)]) {
-        [self.buttonColor getRed:&red green:&green blue:&blue alpha:&alpha];
-        [self.buttonColor getWhite:&white alpha:&alpha];
-        
-        if(!(red + green + blue) && white){
-            newColor = [UIColor colorWithWhite:white - 0.2 alpha:alpha];
-        } else if(!(red + green + blue) && !white) {
-            newColor = [UIColor colorWithWhite:white + 0.2 alpha:alpha];
-        } else{
-            newColor = [UIColor colorWithRed:red - 0.2 green:green - 0.2 blue:blue - 0.2 alpha:alpha];
-        }
-    } else if(CGColorGetNumberOfComponents(self.buttonColor.CGColor) == 2){
-        CGFloat hue;
-        CGFloat saturation;
-        CGFloat brightness;
-        [self.buttonColor getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha];
-        
-        newColor = [UIColor colorWithHue:hue - 0.2 saturation:saturation - 0.2 brightness:brightness - 0.2 alpha:alpha];
-    }
-    
-    self.backgroundColor = newColor;
-    
+    CGFloat red, grn, blu, white, alpha = 0.0;
+    [self.buttonColor getRed:&red green:&grn blue:&blu alpha:&alpha];
+    [self.buttonColor getWhite:&white alpha:&alpha];
+    self.backgroundColor = [UIColor colorWithRed:red - kHighlightDelta
+                                           green:grn - kHighlightDelta
+                                            blue:blu - kHighlightDelta
+                                           alpha:alpha];
 }
 
 - (void)endedPress

@@ -21,6 +21,7 @@
 		BCD9B2D31805ADD10065B9D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD9B2B51805ADD10065B9D6 /* UIKit.framework */; };
 		BCD9B2DB1805ADD10065B9D6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BCD9B2D91805ADD10065B9D6 /* InfoPlist.strings */; };
 		BCD9B2DD1805ADD10065B9D6 /* KHFlatButton_ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9B2DC1805ADD10065B9D6 /* KHFlatButton_ExampleTests.m */; };
+		BCD9B2E91805AF690065B9D6 /* KHFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9B2E81805AF690065B9D6 /* KHFlatButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		BCD9B2D81805ADD10065B9D6 /* KHFlatButton ExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KHFlatButton ExampleTests-Info.plist"; sourceTree = "<group>"; };
 		BCD9B2DA1805ADD10065B9D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BCD9B2DC1805ADD10065B9D6 /* KHFlatButton_ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KHFlatButton_ExampleTests.m; sourceTree = "<group>"; };
+		BCD9B2E71805AF690065B9D6 /* KHFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHFlatButton.h; sourceTree = "<group>"; };
+		BCD9B2E81805AF690065B9D6 /* KHFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHFlatButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,7 @@
 		BCD9B2A51805ADD10065B9D6 = {
 			isa = PBXGroup;
 			children = (
+				BCD9B2E61805AF690065B9D6 /* KHFlatButton */,
 				BCD9B2B71805ADD10065B9D6 /* KHFlatButton Example */,
 				BCD9B2D61805ADD10065B9D6 /* KHFlatButton ExampleTests */,
 				BCD9B2B01805ADD10065B9D6 /* Frameworks */,
@@ -150,6 +154,16 @@
 				BCD9B2D91805ADD10065B9D6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BCD9B2E61805AF690065B9D6 /* KHFlatButton */ = {
+			isa = PBXGroup;
+			children = (
+				BCD9B2E71805AF690065B9D6 /* KHFlatButton.h */,
+				BCD9B2E81805AF690065B9D6 /* KHFlatButton.m */,
+			);
+			name = KHFlatButton;
+			path = ../../KHFlatButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +266,7 @@
 				BCD9B2C81805ADD10065B9D6 /* ViewController.m in Sources */,
 				BCD9B2C21805ADD10065B9D6 /* AppDelegate.m in Sources */,
 				BCD9B2BE1805ADD10065B9D6 /* main.m in Sources */,
+				BCD9B2E91805AF690065B9D6 /* KHFlatButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
