@@ -15,5 +15,5 @@ Pod::Spec.new do |s|
   s.platform     = :ios
   s.platform     = :ios, '7.0'
   s.source       = { :git => "https://github.com/kylehorn/KHFlatButton.git", :tag => s.version.to_s }
-  s.source_files = '*.{h,m}'
+  s.source_files = "**/KHFlatButton/*.{h,m}"
 end
