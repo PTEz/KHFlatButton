@@ -14,7 +14,6 @@ Pod::Spec.new do |s|
   s.author       = { "Kyle Horn" => "kylehorn@me.com" }
   s.platform     = :ios
   s.platform     = :ios, '7.0'
-  s.source       = { :git => "https://github.com/kylehorn/KHFlatButton.git", :tag => "1.0" }
-  s.source_files = 'KHFlatButton', 'KHFlatButton/**/*.{h,m}'
-  s.exclude_files = ''
+  s.source       = { :git => "https://github.com/kylehorn/KHFlatButton.git", :tag => s.version.to_s }
+  s.source_files = '*.{h,m}'
 end
