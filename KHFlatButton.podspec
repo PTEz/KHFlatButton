@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "KHFlatButton"
-  s.version      = "1.0"
+  s.version      = "1.0.0"
   s.summary      = "Flat buttons for iOS 7."
   s.description  = <<-DESC
                    KHFlatButton.
