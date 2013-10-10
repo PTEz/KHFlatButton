@@ -15,3 +15,4 @@ be customized however you like using normal button properties.
 
 ###License
 Feel free to use this however you'd like and any credit back would be appreciated.
+It's using the MIT License which can be found in the License file.
