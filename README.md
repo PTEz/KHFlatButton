@@ -13,6 +13,8 @@ one of the built in factory methods to create buttons or set the button's class 
 Check out the Example directory for an example of how to use KHFlatButton via code and in a Storyboard file. The buttons can
 be customized however you like using normal button properties.
 
+Check out more from Kyle Horn @kylehorn and Blaine Fahey @bfahey.
+
 ###License
 Feel free to use this however you'd like and any credit back would be appreciated.
 It's using the MIT License which can be found in the License file.
