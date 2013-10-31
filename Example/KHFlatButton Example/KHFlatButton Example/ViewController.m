@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "KHFlatButton.h"
 
 @interface ViewController ()
 
@@ -17,7 +18,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    UIColor *green = [UIColor colorWithRed:0.1 green:0.7 blue:0.2 alpha:1.0];
+	self.navigationItem.rightBarButtonItem = [KHFlatButton barButtonWithTitle:@"CHECK OUT" backgroundColor:green];
+    
+    UIColor *blue = [UIColor colorWithRed:0.1 green:0.2 blue:0.7 alpha:1.0];
+	self.navigationItem.leftBarButtonItem = [KHFlatButton barButtonWithTitle:@"Cancel" backgroundColor:blue];
 }
 
 - (void)didReceiveMemoryWarning

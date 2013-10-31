@@ -66,6 +66,21 @@ static CGFloat const kHighlightDelta = 0.2;
     return btn;
 }
 
++ (UIBarButtonItem *)barButtonWithTitle:(NSString *)title backgroundColor:(UIColor *)backgroundColor
+{
+    KHFlatButton *btn = [[KHFlatButton alloc]initWithFrame:CGRectZero withTitle:title backgroundColor:backgroundColor cornerRadius:kDefaultCornerRadius];
+    
+    // Add padding to button label
+    btn.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [btn sizeToFit];
+    CGRect frame = btn.frame;
+    frame.size.width += 20;
+    btn.frame = frame;
+    btn.titleLabel.font = [UIFont boldSystemFontOfSize:13.0];
+    UIBarButtonItem *barBtn = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    return barBtn;
+}
+
 - (void)makeFlat:(KHFlatButton *)button withBackgroundColor:(UIColor*)backgroundColor
 {
     self.buttonColor = backgroundColor;
@@ -94,6 +109,5 @@ static CGFloat const kHighlightDelta = 0.2;
 {
     self.backgroundColor = self.buttonColor;
 }
-
 
 @end

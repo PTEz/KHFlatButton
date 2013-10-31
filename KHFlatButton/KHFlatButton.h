@@ -15,4 +15,6 @@
 // Factory method that returns a button with default corner radius of 2.0
 + (KHFlatButton *)buttonWithFrame:(CGRect)frame withTitle:(NSString *)title backgroundColor:(UIColor *)backgroundColor;
 
++ (UIBarButtonItem *)barButtonWithTitle:(NSString *)title backgroundColor:(UIColor *)backgroundColor;
+
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A598" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="m4C-hK-e2i">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
@@ -16,31 +16,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bil-Sh-tw4" customClass="KHFlatButton">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bil-Sh-tw4" customClass="KHFlatButton">
                                 <rect key="frame" x="20" y="72" width="280" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="ZkD-qT-13U"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWh-Dm-dZg" customClass="KHFlatButton">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWh-Dm-dZg" customClass="KHFlatButton">
                                 <rect key="frame" x="20" y="124" width="280" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="c3d-RM-PxN"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3u-9Q-i1k" customClass="KHFlatButton">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3u-9Q-i1k" customClass="KHFlatButton">
                                 <rect key="frame" x="20" y="252" width="280" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -49,20 +43,16 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEI-EE-eae" customClass="KHFlatButton">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEI-EE-eae" customClass="KHFlatButton">
                                 <rect key="frame" x="20" y="176" width="135" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="25H-Vg-kcg"/>
-                                    <constraint firstAttribute="width" constant="135" id="5EN-6W-dkE"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7OH-Io-svS" customClass="KHFlatButton">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7OH-Io-svS" customClass="KHFlatButton">
                                 <rect key="frame" x="165" y="176" width="135" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -71,19 +61,16 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQX-Uq-m3j" customClass="KHFlatButton">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQX-Uq-m3j" customClass="KHFlatButton">
                                 <rect key="frame" x="20" y="214" width="135" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Ck0-jB-eLS"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBl-X8-xS3" customClass="KHFlatButton">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBl-X8-xS3" customClass="KHFlatButton">
                                 <rect key="frame" x="165" y="214" width="135" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.50196081399917603" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -94,34 +81,28 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="bil-Sh-tw4" firstAttribute="leading" secondItem="wWh-Dm-dZg" secondAttribute="leading" id="2GT-I6-t16"/>
-                            <constraint firstItem="x3u-9Q-i1k" firstAttribute="leading" secondItem="sQX-Uq-m3j" secondAttribute="leading" id="5fH-UD-KCp"/>
-                            <constraint firstItem="sQX-Uq-m3j" firstAttribute="leading" secondItem="eEI-EE-eae" secondAttribute="leading" id="85Z-2y-ET7"/>
-                            <constraint firstItem="7OH-Io-svS" firstAttribute="top" secondItem="wWh-Dm-dZg" secondAttribute="bottom" constant="8" symbolic="YES" id="8Ra-un-xAM"/>
-                            <constraint firstItem="x3u-9Q-i1k" firstAttribute="top" secondItem="sQX-Uq-m3j" secondAttribute="bottom" constant="8" symbolic="YES" id="8Y2-L4-DLk"/>
-                            <constraint firstItem="7OH-Io-svS" firstAttribute="leading" secondItem="eEI-EE-eae" secondAttribute="trailing" constant="10" id="KXC-hd-3ab"/>
-                            <constraint firstItem="rBl-X8-xS3" firstAttribute="trailing" secondItem="7OH-Io-svS" secondAttribute="trailing" id="Lca-KR-ElQ"/>
-                            <constraint firstItem="rBl-X8-xS3" firstAttribute="trailing" secondItem="x3u-9Q-i1k" secondAttribute="trailing" id="MeE-AT-4jv"/>
-                            <constraint firstItem="wWh-Dm-dZg" firstAttribute="trailing" secondItem="7OH-Io-svS" secondAttribute="trailing" id="NHo-Dc-ttC"/>
-                            <constraint firstItem="rBl-X8-xS3" firstAttribute="top" secondItem="7OH-Io-svS" secondAttribute="bottom" constant="8" symbolic="YES" id="PRh-eO-mIZ"/>
-                            <constraint firstItem="x3u-9Q-i1k" firstAttribute="top" secondItem="rBl-X8-xS3" secondAttribute="bottom" constant="8" symbolic="YES" id="Pda-Vj-I4j"/>
-                            <constraint firstItem="bil-Sh-tw4" firstAttribute="top" secondItem="gVS-e1-N7d" secondAttribute="bottom" constant="52" id="SFr-dK-bB6"/>
-                            <constraint firstItem="GpJ-GC-Jpd" firstAttribute="top" secondItem="x3u-9Q-i1k" secondAttribute="bottom" constant="228" id="XaL-Ao-7eB"/>
-                            <constraint firstItem="7OH-Io-svS" firstAttribute="baseline" secondItem="eEI-EE-eae" secondAttribute="baseline" id="ae2-MX-LBj"/>
-                            <constraint firstItem="bil-Sh-tw4" firstAttribute="trailing" secondItem="wWh-Dm-dZg" secondAttribute="trailing" id="kEk-TC-HXM"/>
-                            <constraint firstItem="wWh-Dm-dZg" firstAttribute="top" secondItem="bil-Sh-tw4" secondAttribute="bottom" constant="8" symbolic="YES" id="lcq-66-OnP"/>
-                            <constraint firstItem="sQX-Uq-m3j" firstAttribute="top" secondItem="eEI-EE-eae" secondAttribute="bottom" constant="8" symbolic="YES" id="pQc-Pa-yXp"/>
-                            <constraint firstItem="eEI-EE-eae" firstAttribute="leading" secondItem="wWh-Dm-dZg" secondAttribute="leading" id="qIe-uN-6Vg"/>
-                            <constraint firstItem="bil-Sh-tw4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="r2F-rB-y6d"/>
-                            <constraint firstAttribute="trailing" secondItem="bil-Sh-tw4" secondAttribute="trailing" constant="20" symbolic="YES" id="sGP-yT-2oc"/>
-                            <constraint firstItem="eEI-EE-eae" firstAttribute="top" secondItem="wWh-Dm-dZg" secondAttribute="bottom" constant="8" symbolic="YES" id="tPD-pH-PWi"/>
-                            <constraint firstItem="7OH-Io-svS" firstAttribute="leading" secondItem="rBl-X8-xS3" secondAttribute="leading" id="uPJ-Kz-5xK"/>
-                            <constraint firstItem="eEI-EE-eae" firstAttribute="trailing" secondItem="sQX-Uq-m3j" secondAttribute="trailing" id="yz5-dW-MIE"/>
-                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="5RJ-P8-0ut"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="706" y="146"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JQf-g6-XZJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="m4C-hK-e2i" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Epd-Fg-nso">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="Qjy-w7-lMm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2iz-Xy-HAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="180" y="146"/>
         </scene>
