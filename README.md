@@ -3,7 +3,8 @@
 Flat Button for iOS 7 with background color
 
 I developed KHFlatButton to make it really easy to make flat buttons with a solid background color either in code, Storyboards, or Nibs.
-This was modeled off a few other libraries that I've combined into my own to include how I use buttons most often.
+I've also added support for BarButtons to be used in navigation bars. This is modeled off the Apple Store App and
+how I use flat buttons most often.
 
 ##How To Use
 
