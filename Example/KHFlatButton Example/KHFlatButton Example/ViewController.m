@@ -24,12 +24,8 @@
     
     UIColor *blue = [UIColor colorWithRed:0.1 green:0.2 blue:0.7 alpha:1.0];
 	self.navigationItem.leftBarButtonItem = [KHFlatButton barButtonWithTitle:@"Cancel" backgroundColor:blue];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    self.customButton.cornerRadius = 10.0;
 }
 
 @end
