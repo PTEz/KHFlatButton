@@ -16,4 +16,6 @@
 
 + (UIBarButtonItem *)barButtonWithTitle:(NSString *)title backgroundColor:(UIColor *)backgroundColor;
 
+@property (nonatomic) CGFloat cornerRadius;
+
 @end
