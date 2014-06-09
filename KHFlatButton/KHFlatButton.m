@@ -107,6 +107,15 @@ static CGFloat const kHighlightDelta = 0.2;
                                            alpha:alpha];
 }
 
+- (void)setEnabled:(BOOL)enabled {
+    [super setEnabled:enabled];
+    if(!enabled) {
+        [self wasPressed];
+    } else {
+        [self endedPress];
+    }
+}
+
 - (void)endedPress
 {
     self.backgroundColor = self.buttonColor;
