@@ -18,12 +18,14 @@ static CGFloat const kHighlightDelta = 0.2;
 
 @implementation KHFlatButton
 
+@dynamic cornerRadius;
+
 - (void)awakeFromNib
 {
     [super awakeFromNib];
     
     [self makeFlat:self withBackgroundColor:self.backgroundColor];
-    self.layer.cornerRadius = kDefaultCornerRadius;
+    self.cornerRadius = kDefaultCornerRadius;
 }
 
 - (id)initWithFrame:(CGRect)frame withBackgroundColor:(UIColor*)backgroundColor
@@ -41,7 +43,7 @@ static CGFloat const kHighlightDelta = 0.2;
     if (self) {
         [self makeFlat:self withBackgroundColor:backgroundColor];
         if (radius) {
-            self.layer.cornerRadius = radius;
+            self.cornerRadius = radius;
         }
         [self setTitle:title forState:UIControlStateNormal];
     }
@@ -108,6 +110,16 @@ static CGFloat const kHighlightDelta = 0.2;
 - (void)endedPress
 {
     self.backgroundColor = self.buttonColor;
+}
+
+- (void)setCornerRadius:(CGFloat)cornerRadius
+{
+    self.layer.cornerRadius = cornerRadius;
+}
+
+- (CGFloat)cornerRadius
+{
+    return self.layer.cornerRadius;
 }
 
 @end

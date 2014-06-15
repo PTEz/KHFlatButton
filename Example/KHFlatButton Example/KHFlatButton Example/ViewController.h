@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class KHFlatButton;
 
 @interface ViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet KHFlatButton * customButton;
 
 @end
