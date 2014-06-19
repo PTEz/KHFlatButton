@@ -26,9 +26,15 @@ static CGFloat const kHighlightDelta = 0.2;
     
     self.cornerRadius = kDefaultCornerRadius;
     
-    [self addTarget:self action:@selector(wasPressed) forControlEvents:UIControlEventTouchDown];
-    [self addTarget:self action:@selector(endedPress) forControlEvents:UIControlEventTouchDragExit];
-    [self addTarget:self action:@selector(endedPress) forControlEvents:UIControlEventTouchUpInside];
+    [self addTarget:self action:@selector(wasPressed) forControlEvents:(UIControlEventTouchDown       |
+                                                                        UIControlEventTouchDownRepeat |
+                                                                        UIControlEventTouchDragInside |
+                                                                        UIControlEventTouchDragEnter)];
+    [self addTarget:self action:@selector(endedPress) forControlEvents:(UIControlEventTouchCancel      |
+                                                                        UIControlEventTouchDragOutside |
+                                                                        UIControlEventTouchDragExit    |
+                                                                        UIControlEventTouchUpInside    |
+                                                                        UIControlEventTouchUpOutside)];
 }
 
 - (id)initWithFrame:(CGRect)frame withBackgroundColor:(UIColor*)backgroundColor
@@ -47,9 +53,15 @@ static CGFloat const kHighlightDelta = 0.2;
         CGFloat fontSize = floorf(CGRectGetHeight(self.bounds) / 2.5);
         self.titleLabel.font = [UIFont boldSystemFontOfSize:MAX(kMinimumFontSize, fontSize)];
         
-        [self addTarget:self action:@selector(wasPressed) forControlEvents:UIControlEventTouchDown];
-        [self addTarget:self action:@selector(endedPress) forControlEvents:UIControlEventTouchDragExit];
-        [self addTarget:self action:@selector(endedPress) forControlEvents:UIControlEventTouchUpInside];
+        [self addTarget:self action:@selector(wasPressed) forControlEvents:(UIControlEventTouchDown       |
+                                                                            UIControlEventTouchDownRepeat |
+                                                                            UIControlEventTouchDragInside |
+                                                                            UIControlEventTouchDragEnter)];
+        [self addTarget:self action:@selector(endedPress) forControlEvents:(UIControlEventTouchCancel      |
+                                                                            UIControlEventTouchDragOutside |
+                                                                            UIControlEventTouchDragExit    |
+                                                                            UIControlEventTouchUpInside    |
+                                                                            UIControlEventTouchUpOutside)];
     }
     return self;
 }
