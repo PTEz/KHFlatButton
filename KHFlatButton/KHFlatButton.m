@@ -38,9 +38,7 @@ static CGFloat const kHighlightDelta = 0.2;
     self = [super initWithFrame:frame];
     if (self) {
         [self makeFlat:self withBackgroundColor:backgroundColor];
-        if (radius) {
-            self.cornerRadius = radius;
-        }
+        self.cornerRadius = radius;
         [self setTitle:title forState:UIControlStateNormal];
     }
     return self;
