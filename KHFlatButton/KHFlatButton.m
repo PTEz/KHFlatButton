@@ -30,11 +30,7 @@ static CGFloat const kHighlightDelta = 0.2;
 
 - (id)initWithFrame:(CGRect)frame withBackgroundColor:(UIColor*)backgroundColor
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self makeFlat:self withBackgroundColor:backgroundColor];
-    }
-    return self;
+    return [self initWithFrame:frame withTitle:nil backgroundColor:backgroundColor cornerRadius:kDefaultCornerRadius];
 }
 
 - (id)initWithFrame:(CGRect)frame withTitle:(NSString *)title backgroundColor:(UIColor*)backgroundColor cornerRadius:(CGFloat)radius;
