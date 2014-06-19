@@ -24,7 +24,6 @@ static CGFloat const kHighlightDelta = 0.2;
 {
     [super awakeFromNib];
     
-    [self makeFlat:self withBackgroundColor:self.backgroundColor];
     self.cornerRadius = kDefaultCornerRadius;
 }
 
@@ -37,7 +36,7 @@ static CGFloat const kHighlightDelta = 0.2;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self makeFlat:self withBackgroundColor:backgroundColor];
+        self.backgroundColor = backgroundColor;
         self.cornerRadius = radius;
         [self setTitle:title forState:UIControlStateNormal];
         
@@ -80,11 +79,11 @@ static CGFloat const kHighlightDelta = 0.2;
     return barBtn;
 }
 
-- (void)makeFlat:(KHFlatButton *)button withBackgroundColor:(UIColor*)backgroundColor
+- (void)setBackgroundColor:(UIColor *)backgroundColor
 {
+    super.backgroundColor = backgroundColor;
     self.originalBackgroundColor = backgroundColor;
     
-    [self setBackgroundColor:backgroundColor];
     [self addTarget:self action:@selector(wasPressed) forControlEvents:UIControlEventTouchDown];
     [self addTarget:self action:@selector(endedPress) forControlEvents:UIControlEventTouchDragExit];
     [self addTarget:self action:@selector(endedPress) forControlEvents:UIControlEventTouchUpInside];
@@ -95,15 +94,15 @@ static CGFloat const kHighlightDelta = 0.2;
     CGFloat red, grn, blu, white, alpha = 0.0;
     [self.originalBackgroundColor getRed:&red green:&grn blue:&blu alpha:&alpha];
     [self.originalBackgroundColor getWhite:&white alpha:&alpha];
-    self.backgroundColor = [UIColor colorWithRed:red - kHighlightDelta
-                                           green:grn - kHighlightDelta
-                                            blue:blu - kHighlightDelta
-                                           alpha:alpha];
+    super.backgroundColor = [UIColor colorWithRed:red - kHighlightDelta
+                                            green:grn - kHighlightDelta
+                                             blue:blu - kHighlightDelta
+                                            alpha:alpha];
 }
 
 - (void)endedPress
 {
-    self.backgroundColor = self.originalBackgroundColor;
+    super.backgroundColor = self.originalBackgroundColor;
 }
 
 - (void)setCornerRadius:(CGFloat)cornerRadius
