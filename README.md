@@ -19,3 +19,5 @@ Check out more on GitHub from Kyle Horn @kylehorn and Blaine Fahey @bfahey
 ###License
 Feel free to use this however you'd like and any credit back would be appreciated.
 It's using the MIT License which can be found in the License file.
+
+Credit to ijason for the base of this class. https://github.com/ijason/FlatButtons.
