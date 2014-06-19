@@ -40,6 +40,9 @@ static CGFloat const kHighlightDelta = 0.2;
         [self makeFlat:self withBackgroundColor:backgroundColor];
         self.cornerRadius = radius;
         [self setTitle:title forState:UIControlStateNormal];
+        
+        CGFloat fontSize = floorf(CGRectGetHeight(self.bounds) / 2.5);
+        self.titleLabel.font = [UIFont boldSystemFontOfSize:MAX(kMinimumFontSize, fontSize)];
     }
     return self;
 }
@@ -80,9 +83,6 @@ static CGFloat const kHighlightDelta = 0.2;
 - (void)makeFlat:(KHFlatButton *)button withBackgroundColor:(UIColor*)backgroundColor
 {
     self.originalBackgroundColor = backgroundColor;
-    
-    CGFloat fontSize = floorf(CGRectGetHeight(self.bounds) / 2.5);
-    self.titleLabel.font = [UIFont boldSystemFontOfSize:MAX(kMinimumFontSize, fontSize)];
     
     [self setBackgroundColor:backgroundColor];
     [self addTarget:self action:@selector(wasPressed) forControlEvents:UIControlEventTouchDown];
