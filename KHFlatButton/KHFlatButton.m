@@ -13,7 +13,7 @@ static CGFloat const kMinimumFontSize = 14.0;
 static CGFloat const kHighlightDelta = 0.2;
 
 @interface KHFlatButton()
-@property (strong, nonatomic) UIColor *buttonColor;
+@property (strong, nonatomic) UIColor *originalBackgroundColor;
 @end
 
 @implementation KHFlatButton
@@ -85,7 +85,7 @@ static CGFloat const kHighlightDelta = 0.2;
 
 - (void)makeFlat:(KHFlatButton *)button withBackgroundColor:(UIColor*)backgroundColor
 {
-    self.buttonColor = backgroundColor;
+    self.originalBackgroundColor = backgroundColor;
     
     CGFloat fontSize = floorf(CGRectGetHeight(self.bounds) / 2.5);
     self.titleLabel.font = [UIFont boldSystemFontOfSize:MAX(kMinimumFontSize, fontSize)];
@@ -99,8 +99,8 @@ static CGFloat const kHighlightDelta = 0.2;
 - (void)wasPressed
 {
     CGFloat red, grn, blu, white, alpha = 0.0;
-    [self.buttonColor getRed:&red green:&grn blue:&blu alpha:&alpha];
-    [self.buttonColor getWhite:&white alpha:&alpha];
+    [self.originalBackgroundColor getRed:&red green:&grn blue:&blu alpha:&alpha];
+    [self.originalBackgroundColor getWhite:&white alpha:&alpha];
     self.backgroundColor = [UIColor colorWithRed:red - kHighlightDelta
                                            green:grn - kHighlightDelta
                                             blue:blu - kHighlightDelta
@@ -109,7 +109,7 @@ static CGFloat const kHighlightDelta = 0.2;
 
 - (void)endedPress
 {
-    self.backgroundColor = self.buttonColor;
+    self.backgroundColor = self.originalBackgroundColor;
 }
 
 - (void)setCornerRadius:(CGFloat)cornerRadius
