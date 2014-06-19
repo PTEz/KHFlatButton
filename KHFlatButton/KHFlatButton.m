@@ -25,6 +25,10 @@ static CGFloat const kHighlightDelta = 0.2;
     [super awakeFromNib];
     
     self.cornerRadius = kDefaultCornerRadius;
+    
+    [self addTarget:self action:@selector(wasPressed) forControlEvents:UIControlEventTouchDown];
+    [self addTarget:self action:@selector(endedPress) forControlEvents:UIControlEventTouchDragExit];
+    [self addTarget:self action:@selector(endedPress) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (id)initWithFrame:(CGRect)frame withBackgroundColor:(UIColor*)backgroundColor
@@ -42,6 +46,10 @@ static CGFloat const kHighlightDelta = 0.2;
         
         CGFloat fontSize = floorf(CGRectGetHeight(self.bounds) / 2.5);
         self.titleLabel.font = [UIFont boldSystemFontOfSize:MAX(kMinimumFontSize, fontSize)];
+        
+        [self addTarget:self action:@selector(wasPressed) forControlEvents:UIControlEventTouchDown];
+        [self addTarget:self action:@selector(endedPress) forControlEvents:UIControlEventTouchDragExit];
+        [self addTarget:self action:@selector(endedPress) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
 }
@@ -83,10 +91,6 @@ static CGFloat const kHighlightDelta = 0.2;
 {
     super.backgroundColor = backgroundColor;
     self.originalBackgroundColor = backgroundColor;
-    
-    [self addTarget:self action:@selector(wasPressed) forControlEvents:UIControlEventTouchDown];
-    [self addTarget:self action:@selector(endedPress) forControlEvents:UIControlEventTouchDragExit];
-    [self addTarget:self action:@selector(endedPress) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)wasPressed
