@@ -26,6 +26,9 @@
 	self.navigationItem.leftBarButtonItem = [KHFlatButton barButtonWithTitle:@"Cancel" backgroundColor:blue];
     
     self.customButton.cornerRadius = 10.0;
+    
+    KHFlatButton *codeButton = [KHFlatButton buttonWithFrame:CGRectMake(10, 277, 300, 44) withTitle:@"Button From Code" backgroundColor:[UIColor orangeColor] cornerRadius:self.customButton.cornerRadius];
+    [self.view addSubview:codeButton];
 }
 
 @end
