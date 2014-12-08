@@ -13,7 +13,7 @@ static CGFloat const kMinimumFontSize = 14.0;
 static CGFloat const kHighlightDelta = 0.2;
 
 @interface KHFlatButton()
-@property (strong, nonatomic) UIColor *buttonColor;
+@property (strong, nonatomic) UIColor *originalBackgroundColor;
 @end
 
 @implementation KHFlatButton
@@ -24,28 +24,44 @@ static CGFloat const kHighlightDelta = 0.2;
 {
     [super awakeFromNib];
     
-    [self makeFlat:self withBackgroundColor:self.backgroundColor];
     self.cornerRadius = kDefaultCornerRadius;
+    
+    [self addTarget:self action:@selector(wasPressed) forControlEvents:(UIControlEventTouchDown       |
+                                                                        UIControlEventTouchDownRepeat |
+                                                                        UIControlEventTouchDragInside |
+                                                                        UIControlEventTouchDragEnter)];
+    [self addTarget:self action:@selector(endedPress) forControlEvents:(UIControlEventTouchCancel      |
+                                                                        UIControlEventTouchDragOutside |
+                                                                        UIControlEventTouchDragExit    |
+                                                                        UIControlEventTouchUpInside    |
+                                                                        UIControlEventTouchUpOutside)];
 }
 
 - (id)initWithFrame:(CGRect)frame withBackgroundColor:(UIColor*)backgroundColor
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self makeFlat:self withBackgroundColor:backgroundColor];
-    }
-    return self;
+    return [self initWithFrame:frame withTitle:nil backgroundColor:backgroundColor cornerRadius:kDefaultCornerRadius];
 }
 
 - (id)initWithFrame:(CGRect)frame withTitle:(NSString *)title backgroundColor:(UIColor*)backgroundColor cornerRadius:(CGFloat)radius;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self makeFlat:self withBackgroundColor:backgroundColor];
-        if (radius) {
-            self.cornerRadius = radius;
-        }
+        self.backgroundColor = backgroundColor;
+        self.cornerRadius = radius;
         [self setTitle:title forState:UIControlStateNormal];
+        
+        CGFloat fontSize = floorf(CGRectGetHeight(self.bounds) / 2.5);
+        self.titleLabel.font = [UIFont boldSystemFontOfSize:MAX(kMinimumFontSize, fontSize)];
+        
+        [self addTarget:self action:@selector(wasPressed) forControlEvents:(UIControlEventTouchDown       |
+                                                                            UIControlEventTouchDownRepeat |
+                                                                            UIControlEventTouchDragInside |
+                                                                            UIControlEventTouchDragEnter)];
+        [self addTarget:self action:@selector(endedPress) forControlEvents:(UIControlEventTouchCancel      |
+                                                                            UIControlEventTouchDragOutside |
+                                                                            UIControlEventTouchDragExit    |
+                                                                            UIControlEventTouchUpInside    |
+                                                                            UIControlEventTouchUpOutside)];
     }
     return self;
 }
@@ -83,28 +99,21 @@ static CGFloat const kHighlightDelta = 0.2;
     return barBtn;
 }
 
-- (void)makeFlat:(KHFlatButton *)button withBackgroundColor:(UIColor*)backgroundColor
+- (void)setBackgroundColor:(UIColor *)backgroundColor
 {
-    self.buttonColor = backgroundColor;
-    
-    CGFloat fontSize = floorf(CGRectGetHeight(self.bounds) / 2.5);
-    self.titleLabel.font = [UIFont boldSystemFontOfSize:MAX(kMinimumFontSize, fontSize)];
-    
-    [self setBackgroundColor:backgroundColor];
-    [self addTarget:self action:@selector(wasPressed) forControlEvents:UIControlEventTouchDown];
-    [self addTarget:self action:@selector(endedPress) forControlEvents:UIControlEventTouchDragExit];
-    [self addTarget:self action:@selector(endedPress) forControlEvents:UIControlEventTouchUpInside];
+    super.backgroundColor = backgroundColor;
+    self.originalBackgroundColor = backgroundColor;
 }
 
 - (void)wasPressed
 {
     CGFloat red, grn, blu, white, alpha = 0.0;
-    [self.buttonColor getRed:&red green:&grn blue:&blu alpha:&alpha];
-    [self.buttonColor getWhite:&white alpha:&alpha];
-    self.backgroundColor = [UIColor colorWithRed:red - kHighlightDelta
-                                           green:grn - kHighlightDelta
-                                            blue:blu - kHighlightDelta
-                                           alpha:alpha];
+    [self.originalBackgroundColor getRed:&red green:&grn blue:&blu alpha:&alpha];
+    [self.originalBackgroundColor getWhite:&white alpha:&alpha];
+    super.backgroundColor = [UIColor colorWithRed:red - kHighlightDelta
+                                            green:grn - kHighlightDelta
+                                             blue:blu - kHighlightDelta
+                                            alpha:alpha];
 }
 
 - (void)setEnabled:(BOOL)enabled {
@@ -118,7 +127,7 @@ static CGFloat const kHighlightDelta = 0.2;
 
 - (void)endedPress
 {
-    self.backgroundColor = self.buttonColor;
+    super.backgroundColor = self.originalBackgroundColor;
 }
 
 - (void)setCornerRadius:(CGFloat)cornerRadius
